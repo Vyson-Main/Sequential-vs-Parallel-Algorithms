@@ -9,3 +9,10 @@
 # Based on our results, parallelism wasn't clearly beneficial in any of the cases we tested on this machine, but I understand why it can be, based on the trend we saw. With a truly massive dataset tens of millions of elements and on a machine with more cores, the computation time for each chunk would grow large enough that splitting it across multiple cores would give a real advantage over doing it all on one.
 # For searching, I think parallelism would only make sense if you were searching through something much more expensive than a simple integer comparison for example, searching through very large text documents or doing pattern matching where each comparison itself takes significant time.
 # If I had to summarize what I learned. Parallelism isn't a free speed boost. It's a tool that only pays off when the work you're dividing is heavy enough to justify the cost of dividing it. For anything small or fast, sequential is almost always better.
+
+
+# Trisha Aira R. Pabonita - Reflection
+# In this activity, I saw that sequential execution is easier to implement, while parallel execution is more complex because it involves splitting data, managing processes, and combining results.
+# For performance, sequential worked better on small datasets since it has no extra overhead. However, parallel execution can be faster for large datasets because the work is divided across processes.
+# I also had challenges in dividing the data correctly and merging the results into one accurate output. This made parallel implementation harder than sequential.
+# Overall, I learned that parallelism has extra costs like process management and synchronization. It is useful for large and heavy tasks, but for small problems, sequential execution is still the better choice.
