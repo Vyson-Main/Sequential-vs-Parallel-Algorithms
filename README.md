@@ -16,3 +16,10 @@
 # For performance, sequential worked better on small datasets since it has no extra overhead. However, parallel execution can be faster for large datasets because the work is divided across processes.
 # I also had challenges in dividing the data correctly and merging the results into one accurate output. This made parallel implementation harder than sequential.
 # Overall, I learned that parallelism has extra costs like process management and synchronization. It is useful for large and heavy tasks, but for small problems, sequential execution is still the better choice.
+
+
+# Liberty Case M. Calo- Reflection
+
+# Through this activity, I learned that parallelism introduces significant overhead that doesn't always justify the added complexity. While I expected parallel search to be faster on large datasets, the results showed that process creation, data partitioning, and queue synchronization consume more time than the actual search work—especially on smaller datasets.
+# The main challenge was coordinating multiple processes: mapping local indices back to global positions, managing the queue safely, and merging results correctly. This complexity is why parallel algorithms are harder to implement and debug compared to sequential approaches.
+# Overall, parallelism is a powerful tool, but only for truly heavy workloads. For small-to-medium datasets and lightweight operations, sequential execution is simpler and faster. This reinforced that choosing the right algorithm requires understanding both the problem scale and the real costs of synchronization.
