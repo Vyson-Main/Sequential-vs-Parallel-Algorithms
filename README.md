@@ -1,7 +1,10 @@
 # Sequential-vs-Parallel-Algorithms
 
 # Nathaniel Beatisula - Reflection
-# Through this activity, I realized that parallel algorithms aren't automatically faster than sequential ones; their efficiency heavily depends on the size of the dataset being processed. While the sequential approach was straightforward and actually performed better on the small 1,000-element list due to low overhead , writing the parallel implementation highlighted the complexities of process coordination. The biggest challenge was correctly partitioning the data, managing the worker queues in Python, and merging the sorted chunks back into a single accurate output. Ultimately, this experience reinforced that parallelism is incredibly powerful for large-scale data workflows, but only when the computational gain outweighs the cost of synchronization.
+# Through this activity, I realized that parallel algorithms are not always faster than sequential ones, especially when the dataset is small. In this activity, the sequential version felt simpler and even performed better when working with the 1,000 element list because everything runs in a direct and uncomplicated way. The parallel version, on the other hand, felt more complicated and slower in a way because there were more steps involved before getting the final result.
+# One of the hardest parts for me was trying to make everything work together properly. Splitting the data and making sure each part was handled correctly took more effort than I expected. It also felt a bit stressful trying to combine everything back into one correct output, since small mistakes could easily affect the final result.
+# To conclude, this activity helped me understand that parallel processing is not always the better choice. It made me realize that sometimes simpler is better, especially when the task is not that big. But I also saw that parallelism can be really helpful when working with larger data, where doing things at the same time actually makes a noticeable difference.
+
 
 
 # Chrisa Lene Joy Bautista - Reflection
