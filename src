@@ -40,7 +40,7 @@ def run_sequential_sort(data, label=""):
     return sorted_data, elapsed
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     sizes = {
         "Small  (1,000)"      : 1_000,
         "Medium (100,000)"    : 100_000,
