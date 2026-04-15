@@ -221,3 +221,58 @@ if __name__ == "__main__":
 
     data_reverse = list(range(10_000, 0, -1))
     run_parallel_sort(data_reverse, "Reverse-Sorted (10,000)")
+
+
+
+
+
+
+
+# Sequential Linear Search
+# Liberty Case M. Calo
+
+
+import random
+import time
+
+def linear_search(data, target):
+    for index, value in enumerate(data):
+        if value == target:
+            return index
+    return -1
+
+def run_sequential_search(data, target, label=""):
+    print(f"\n[Sequential Linear Search] {label}")
+    print(f"  Searching for : {target}")
+    start = time.time()
+    result = linear_search(data, target)
+    end = time.time()
+    elapsed = end - start
+
+    if result != -1:
+        print(f"  Found at index : {result} (value = {data[result]})")
+    else:
+        print(f"  Result : Target not found")
+
+    print(f"  Elements : {len(data):,}")
+    print(f"  Time     : {elapsed:.4f} seconds")
+    return result, elapsed
+
+if __name__ == "__main__":
+    sizes = {
+        "Small  (1,000)"     : 1_000,
+        "Medium (100,000)"   : 100_000,
+        "Large  (1,000,000)" : 1_000_000,
+    }
+
+    for label, n in sizes.items():
+        data = [random.randint(1, 1_000_000) for _ in range(n)]
+        target = data[random.randint(0, n - 1)]
+        run_sequential_search(data, target, label + " (target exists)")
+        run_sequential_search(data, -999, label + " (target missing)")
+
+    data_sorted = list(range(1, 10_001))
+    run_sequential_search(data_sorted, 7500, "Already-Sorted (10,000)")
+
+    data_reverse = list(range(10_000, 0, -1))
+    run_sequential_search(data_reverse, 2500, "Reverse-Sorted (10,000)")
